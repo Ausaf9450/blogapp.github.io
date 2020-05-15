@@ -1,0 +1,23 @@
+{% extends "entries/base.html" %}
+
+{% block content %}
+<!-- Blog Entries Column -->
+<div class="col-md-8">
+    <!-- Blog Post -->   
+    <div class="card mb-4 mt-4">
+      <div class="card-body">
+        <h4 class="card-title">{{object.entry_title}}</h4>
+        <p class="card-text text-justify ">{{object.entry_text}}</p>
+        <div class="fb-like"  data-href="http://127.0.0.1:8000/entry/{{entry.pk}}/" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+      </div>
+      <div class="card-footer text-muted">
+        Posted on {{object.entry_date}} by
+        <a href="#">{{object.entry_author}}</a>
+      </div>
+
+      <div class="fb-comments" data-href="http://127.0.0.1:8000/entry/{{entry.pk}}/" data-numposts="1" data-width=""></div>
+
+    </div>
+    
+  </div>
+  {% endblock %}
